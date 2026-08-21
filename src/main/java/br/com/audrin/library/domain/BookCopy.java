@@ -10,5 +10,9 @@ public class BookCopy {
         this.book = book;
         this.status = status;
     }
+
+    public void borrow() {}
+
+    public void returnCopy(){}
 }
 

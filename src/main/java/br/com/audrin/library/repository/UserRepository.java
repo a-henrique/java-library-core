@@ -1,4 +1,18 @@
 package br.com.audrin.library.repository;
 
+import br.com.audrin.library.domain.User;
+
+import java.util.List;
+import java.util.Optional;
+
 public interface UserRepository {
+
+    User save(User user);
+
+    Optional<User> findById(Long id);
+
+    List<User> findAll();
+
+    boolean existsByEmail(String email);
+
 }
