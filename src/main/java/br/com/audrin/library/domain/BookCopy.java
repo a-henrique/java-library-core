@@ -5,14 +5,40 @@ public class BookCopy {
     private Book book;
     private BookCopyStatus status;
 
-    BookCopy(Long id, Book book, BookCopyStatus status){
+    BookCopy(Long id, Book book){
         this.id = id;
         this.book = book;
-        this.status = status;
+        this.status = BookCopyStatus.AVAILABLE;
     }
 
-    public void borrow() {}
+    public void borrow(){
+        if (status == BookCopyStatus.BORROWED){
+            throw new IllegalStateException(
+                    "The Copy's already borrowed"
+            );
+        }
+        status = BookCopyStatus.BORROWED;
+    }
 
-    public void returnCopy(){}
+    public void returnCopy(){
+        if (status == BookCopyStatus.AVAILABLE){
+            throw new IllegalStateException(
+                    "The Copy's already available"
+            );
+        }
+        status = BookCopyStatus.AVAILABLE;
+    }
+
+    public Long getId(){
+        return id;
+    }
+
+    public Book getBook(){
+        return book;
+    }
+
+    public BookCopyStatus getStatus(){
+        return status;
+    }
 }
 

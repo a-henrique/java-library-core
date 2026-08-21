@@ -8,4 +8,5 @@ public class Loan {
     private Date bookReturnPreviewDate;
     private Date bookReturnRealDate;
     private String status;
+
 }
