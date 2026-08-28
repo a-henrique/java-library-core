@@ -4,7 +4,7 @@
 **Objetivo:** Elevar o nivel de maturidade sobre desenvolvimento comecando com projeto de biblioteca
 
 **Funcionalidades:**
-- [ ] Cadastrar usuario
+- [x] Cadastrar usuario
 - [ ] Cadastrar livro
 - [ ] Cadastrar exemplares de um livro
 - [ ] Emprestar exemplar
