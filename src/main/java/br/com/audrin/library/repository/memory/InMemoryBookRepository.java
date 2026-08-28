@@ -28,9 +28,10 @@ public class InMemoryBookRepository implements BookRepository {
     }
 
     @Override
-    public boolean existsByIsbn(String isbn){
+    public Optional<Book> findByISBN(String isbn){
         return books.values()
                 .stream()
-                .anyMatch(book -> book.getIsbn().equalsIgnoreCase(isbn));
+                .filter(book -> book.getIsbn().equalsIgnoreCase(isbn))
+                .findFirst();
     }
 }
