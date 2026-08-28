@@ -29,9 +29,10 @@ public class InMemoryUserRepository implements UserRepository {
     }
 
     @Override
-    public boolean existsByEmail(String email){
+    public Optional<User> findByEmail(String email){
         return users.values()
                 .stream()
-                .anyMatch(user -> user.getEmail().equalsIgnoreCase(email));
+                .filter(user -> user.getEmail().equalsIgnoreCase(email))
+                .findFirst();
     }
 }

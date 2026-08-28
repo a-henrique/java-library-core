@@ -5,7 +5,7 @@ public class BookCopy {
     private Book book;
     private BookCopyStatus status;
 
-    BookCopy(Long id, Book book){
+    public BookCopy(Long id, Book book){
         this.id = id;
         this.book = book;
         this.status = BookCopyStatus.AVAILABLE;

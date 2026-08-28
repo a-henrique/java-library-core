@@ -6,7 +6,7 @@ public class Book {
     private String isbn;
     private String author;
 
-    Book(Long id, String title, String isbn, String author){
+    public Book(Long id, String title, String isbn, String author){
         this.id = id;
         this.title = title;
         this.isbn = isbn;
