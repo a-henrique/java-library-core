@@ -11,4 +11,5 @@ public interface LoanRepository {
     Optional<Loan> findById(Long id);
 
     List<Loan> findAll();
+
 }
