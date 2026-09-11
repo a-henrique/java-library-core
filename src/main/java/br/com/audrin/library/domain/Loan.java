@@ -1,22 +1,23 @@
 package br.com.audrin.library.domain;
 
-import java.util.Date;
-
+import java.time.LocalDateTime;
 public class Loan {
     private Long id;
     private User user;
     private BookCopy bookCopy;
-    private Date bookReturnPreviewDate;
-    private Date bookReturnRealDate;
+    private LocalDateTime loanStart;
+    private LocalDateTime bookReturnPreviewDate;
+    private LocalDateTime bookReturnRealDate;
     private LoanStatus status;
 
-    public Loan(Long id, User user, BookCopy bookCopy, Date bookReturnPreviewDate){
+    public Loan(Long id, User user, BookCopy bookCopy, LocalDateTime bookReturnPreviewDate){
         this.id = id;
         this.user = user;
         this.bookCopy = bookCopy;
         this.bookReturnPreviewDate = bookReturnPreviewDate;
         this.bookReturnRealDate = null;
         this.status = LoanStatus.ACTIVE;
+        this.loanStart = LocalDateTime.now();
     }
 
     public Long getId(){
@@ -30,11 +31,11 @@ public class Loan {
         return bookCopy;
     }
 
-    public Date getBookReturnPreviewDate(){
+    public LocalDateTime getBookReturnPreviewDate(){
         return bookReturnPreviewDate;
     }
 
-    public Date getBookReturnRealDate(){
+    public LocalDateTime getBookReturnRealDate(){
         return bookReturnRealDate;
     }
 
@@ -42,12 +43,11 @@ public class Loan {
         return status;
     }
 
-    public void returnLoan(Date returnDate){
-        if (status == LoanStatus.RETURNED){
-            throw new IllegalStateException("Loan already returned");
+    public void finishLoan(){
+        if (status == LoanStatus.FINISHED){
+            throw new IllegalStateException("Loan Already finished");
         }
-
-        this.bookReturnRealDate = returnDate;
-        this.status = LoanStatus.RETURNED;
+        this.status = LoanStatus.FINISHED;
+        this.bookReturnRealDate = LocalDateTime.now();
     }
 }

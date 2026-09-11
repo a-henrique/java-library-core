@@ -3,8 +3,6 @@ package br.com.audrin.library.service;
 import br.com.audrin.library.domain.Book;
 import br.com.audrin.library.repository.BookRepository;
 
-import java.util.Optional;
-
 public class BookService {
 
     private BookRepository bookRepository;
