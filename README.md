@@ -2,7 +2,9 @@
 
 ---
 Este projeto consiste no desenvolvimento de um sistema de gerenciamento de biblioteca em Java, criado com o objetivo de praticar e aprofundar meus conhecimentos em desenvolvimento de software e programação orientada a objetos.
+
 A aplicação simula operações básicas de uma biblioteca, como gerenciamento de usuários, livros, cópias de livros e empréstimos.
+
 O projeto está sendo desenvolvido de forma incremental, com foco inicial nos fundamentos da linguagem e na organização das responsabilidades dentro da aplicação.
 
 Entre os principais conceitos trabalhados estão:
@@ -28,13 +30,3 @@ Essa abordagem permite concentrar o aprendizado inicialmente na construção da 
 O principal objetivo deste projeto é utilizá-lo como ambiente de estudo para melhorar meu entendimento sobre desenvolvimento de software, indo além da implementação de funcionalidades e buscando compreender como estruturar uma aplicação de maneira organizada e evolutiva.
 
 Ao longo do desenvolvimento, o projeto servirá como base para estudar conceitos de programação, orientação a objetos, arquitetura de software, regras de negócio e boas práticas em Java.
-
-### Funcionalidades:
-- [x] Cadastrar usuario
-- [x] Cadastrar livro
-- [x] Cadastrar exemplares de um livro
-- [x] Emprestar exemplar
-- [x] Devolver exemplar
-- [ ] Consultar disponivilidade
-- [ ] Consultar historico do usuario
-- [ ] Impedir emprestimos invalidos
