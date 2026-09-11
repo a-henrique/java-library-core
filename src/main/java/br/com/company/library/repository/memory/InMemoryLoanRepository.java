@@ -1,7 +1,7 @@
-package br.com.audrin.library.repository.memory;
+package br.com.company.library.repository.memory;
 
-import br.com.audrin.library.domain.Loan;
-import br.com.audrin.library.repository.LoanRepository;
+import br.com.company.library.domain.Loan;
+import br.com.company.library.repository.LoanRepository;
 
 import java.util.HashMap;
 import java.util.List;

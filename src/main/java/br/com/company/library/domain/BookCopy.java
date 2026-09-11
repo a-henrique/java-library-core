@@ -1,4 +1,4 @@
-package br.com.audrin.library.domain;
+package br.com.company.library.domain;
 
 public class BookCopy {
     private Long id;

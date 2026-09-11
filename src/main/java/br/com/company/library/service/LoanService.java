@@ -1,11 +1,11 @@
-package br.com.audrin.library.service;
+package br.com.company.library.service;
 
-import br.com.audrin.library.domain.BookCopy;
-import br.com.audrin.library.domain.Loan;
-import br.com.audrin.library.domain.User;
-import br.com.audrin.library.repository.BookCopyRepository;
-import br.com.audrin.library.repository.LoanRepository;
-import br.com.audrin.library.repository.UserRepository;
+import br.com.company.library.domain.BookCopy;
+import br.com.company.library.domain.Loan;
+import br.com.company.library.domain.User;
+import br.com.company.library.repository.BookCopyRepository;
+import br.com.company.library.repository.LoanRepository;
+import br.com.company.library.repository.UserRepository;
 
 import java.time.LocalDateTime;
 

@@ -1,8 +1,7 @@
-package br.com.audrin.library.repository;
+package br.com.company.library.repository;
 
-import br.com.audrin.library.domain.User;
+import br.com.company.library.domain.User;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 

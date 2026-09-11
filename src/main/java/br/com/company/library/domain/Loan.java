@@ -1,4 +1,4 @@
-package br.com.audrin.library.domain;
+package br.com.company.library.domain;
 
 import java.time.LocalDateTime;
 public class Loan {

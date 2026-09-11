@@ -1,7 +1,7 @@
-package br.com.audrin.library.service;
+package br.com.company.library.service;
 
-import br.com.audrin.library.domain.Book;
-import br.com.audrin.library.repository.BookRepository;
+import br.com.company.library.domain.Book;
+import br.com.company.library.repository.BookRepository;
 
 public class BookService {
 

@@ -1,6 +1,6 @@
-package br.com.audrin.library.repository;
+package br.com.company.library.repository;
 
-import br.com.audrin.library.domain.Loan;
+import br.com.company.library.domain.Loan;
 
 import java.util.List;
 import java.util.Optional;

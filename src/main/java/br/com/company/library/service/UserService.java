@@ -1,7 +1,7 @@
-package br.com.audrin.library.service;
+package br.com.company.library.service;
 
-import br.com.audrin.library.domain.User;
-import br.com.audrin.library.repository.UserRepository;
+import br.com.company.library.domain.User;
+import br.com.company.library.repository.UserRepository;
 
 public class UserService {
 
