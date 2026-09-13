@@ -8,6 +8,8 @@ import br.com.company.library.repository.LoanRepository;
 import br.com.company.library.repository.UserRepository;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.UUID;
 
 public class LoanService {
     // It necessary to check:
@@ -28,17 +30,23 @@ public class LoanService {
 
     public Loan createLoan(Long userId, Long bookCopyId, LocalDateTime returnPreviewDate){
         User user = userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("User not found"));
-        BookCopy bookCopy = bookCopyRepository.findById(bookCopyId).orElseThrow(() -> new IllegalArgumentException("Book Copy not found"));
-        Loan loan = new Loan(userId, user, bookCopy, returnPreviewDate);
+        BookCopy bookCopy = bookCopyRepository.findById(bookCopyId).orElseThrow(() -> new IllegalArgumentException("Book Copy not found"));;
+        Loan loan = new Loan(UUID.randomUUID(),user, bookCopy, returnPreviewDate);
+        System.out.println(loan.getId());
         bookCopy.borrow();
         return loanRepository.save(loan);
     }
 
-    public Loan returnLoan(Long loanId){
+    public Loan returnLoan(UUID loanId){
         Loan loan = loanRepository.findById(loanId).orElseThrow(() -> new IllegalArgumentException("Loan not found"));
         BookCopy bookCopy = loan.getBookCopy();
         bookCopy.returnCopy();
         loan.finishLoan();
         return loanRepository.save(loan);
+    }
+
+    public List<Loan> getUserHistory(Long userId){
+        userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("User not found"));
+        return loanRepository.findByUserId(userId);
     }
 }

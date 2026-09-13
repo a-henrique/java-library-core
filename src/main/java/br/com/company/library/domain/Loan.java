@@ -1,8 +1,10 @@
 package br.com.company.library.domain;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
+
 public class Loan {
-    private Long id;
+    private UUID id;
     private User user;
     private BookCopy bookCopy;
     private LocalDateTime loanStart;
@@ -10,7 +12,7 @@ public class Loan {
     private LocalDateTime bookReturnRealDate;
     private LoanStatus status;
 
-    public Loan(Long id, User user, BookCopy bookCopy, LocalDateTime bookReturnPreviewDate){
+    public Loan(UUID id, User user, BookCopy bookCopy, LocalDateTime bookReturnPreviewDate){
         this.id = id;
         this.user = user;
         this.bookCopy = bookCopy;
@@ -20,7 +22,7 @@ public class Loan {
         this.loanStart = LocalDateTime.now();
     }
 
-    public Long getId(){
+    public UUID getId(){
         return this.id;
     }
     public User getUser(){
@@ -49,5 +51,15 @@ public class Loan {
         }
         this.status = LoanStatus.FINISHED;
         this.bookReturnRealDate = LocalDateTime.now();
+    }
+    @Override
+    public String toString() {
+        return "Loan{" +
+                "user=" + user.getName() +
+                ", book=" + bookCopy.getBook().getTitle() +
+                ", status=" + status +
+                ", returnPreviewDate=" + bookReturnPreviewDate +
+                ", returnRealDate=" + bookReturnRealDate +
+                '}';
     }
 }
