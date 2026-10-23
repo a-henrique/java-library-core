@@ -17,7 +17,7 @@ Throughout the development process, this project will serve as a foundation for 
 - [x] Return a book copy
 - [x] Check book availability
 - [x] View user borrowing history
-- [ ] Prevent invalid loans
+- [x] Prevent invalid loans
 
 ---
 
