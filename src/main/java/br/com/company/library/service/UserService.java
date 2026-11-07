@@ -18,4 +18,10 @@ public class UserService {
         }
         return userRepository.save(user);
     }
+
+    public String searchUser(String name){
+        User user = userRepository.findByName(name).orElseThrow(() -> new IllegalArgumentException("User not found!"));
+
+        return user.getName();
+    }
 }

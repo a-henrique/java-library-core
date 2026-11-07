@@ -18,6 +18,17 @@ Throughout the development process, this project will serve as a foundation for 
 - [x] Check book availability
 - [x] View user borrowing history
 - [x] Prevent invalid loans
+- [x] Busca de livro.
+- [x] Busca de usuário.
+- [x] Listagem de exemplares disponíveis.
+- [x] Impedimento de e-mail duplicado.
+- [x] Impedimento de ISBN duplicado.
+- [x] Empréstimo.
+- [x] Devolução.
+- [x] Cálculo de atraso.
+- [ ] Histórico do usuário.
+- [ ] Filtros por disponibilidade.
+- [ ] Exceções de negócio.
 
 ---
 

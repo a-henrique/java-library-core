@@ -7,6 +7,7 @@ import br.com.company.library.repository.BookCopyRepository;
 import br.com.company.library.repository.LoanRepository;
 import br.com.company.library.repository.UserRepository;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
@@ -31,14 +32,24 @@ public class LoanService {
     public Loan createLoan(Long userId, Long bookCopyId, LocalDateTime returnPreviewDate){
         User user = userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("User not found"));
         BookCopy bookCopy = bookCopyRepository.findById(bookCopyId).orElseThrow(() -> new IllegalArgumentException("Book Copy not found"));;
-        Loan loan = new Loan(UUID.randomUUID(),user, bookCopy, returnPreviewDate);
-        System.out.println(loan.getId());
         bookCopy.borrow();
+        Loan loan = new Loan(user, bookCopy, returnPreviewDate);
         return loanRepository.save(loan);
     }
 
     public Loan returnLoan(UUID loanId){
         Loan loan = loanRepository.findById(loanId).orElseThrow(() -> new IllegalArgumentException("Loan not found"));
+        loan.setBookReturnRealDate(LocalDateTime.now());
+
+        Duration delay = Duration.between(loan.getBookReturnPreviewDate(), loan.getBookReturnRealDate());
+        Long diasAtraso = delay.toDays();
+
+        if (loan.getBookReturnRealDate().isAfter(loan.getBookReturnPreviewDate())){
+            System.out.println("Livro devolvido atrasado");
+            double multa = diasAtraso * 1.00 * 1;
+            System.out.printf("Total em Multa=R$%.2f\n", multa);
+
+        }
         BookCopy bookCopy = loan.getBookCopy();
         bookCopy.returnCopy();
         loan.finishLoan();
@@ -48,5 +59,10 @@ public class LoanService {
     public List<Loan> getUserHistory(Long userId){
         userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("User not found"));
         return loanRepository.findByUserId(userId);
+    }
+
+    public double bookDeadlineEndedCalculate(){
+        // TODO
+        return 0;
     }
 }

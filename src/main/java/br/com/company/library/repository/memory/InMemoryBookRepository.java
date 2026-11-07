@@ -3,6 +3,7 @@ package br.com.company.library.repository.memory;
 import br.com.company.library.domain.Book;
 import br.com.company.library.repository.BookRepository;
 
+import javax.swing.text.html.Option;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,4 +35,10 @@ public class InMemoryBookRepository implements BookRepository {
                 .filter(book -> book.getIsbn().equalsIgnoreCase(isbn))
                 .findFirst();
     }
+    public Optional<Book> findByTitle(String name){
+        return books.values()
+                .stream()
+                .filter(book -> book.getTitle().equalsIgnoreCase(name))
+                .findFirst();
+    };
 }

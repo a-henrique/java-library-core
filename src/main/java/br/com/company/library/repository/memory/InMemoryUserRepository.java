@@ -3,6 +3,7 @@ package br.com.company.library.repository.memory;
 import br.com.company.library.domain.User;
 import br.com.company.library.repository.UserRepository;
 
+import javax.swing.text.html.Option;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,6 +34,13 @@ public class InMemoryUserRepository implements UserRepository {
         return users.values()
                 .stream()
                 .filter(user -> user.getEmail().equalsIgnoreCase(email))
+                .findFirst();
+    }
+
+    public Optional<User> findByName(String name){
+        return users.values()
+                .stream()
+                .filter(user -> user.getName().equalsIgnoreCase(name))
                 .findFirst();
     }
 }

@@ -12,8 +12,8 @@ public class Loan {
     private LocalDateTime bookReturnRealDate;
     private LoanStatus status;
 
-    public Loan(UUID id, User user, BookCopy bookCopy, LocalDateTime bookReturnPreviewDate){
-        this.id = id;
+    public Loan(User user, BookCopy bookCopy, LocalDateTime bookReturnPreviewDate){
+        this.id = UUID.randomUUID();
         this.user = user;
         this.bookCopy = bookCopy;
         this.bookReturnPreviewDate = bookReturnPreviewDate;
@@ -37,6 +37,10 @@ public class Loan {
         return bookReturnPreviewDate;
     }
 
+    public void setBookReturnRealDate(LocalDateTime bookReturnRealDate){
+        this.bookReturnRealDate = bookReturnRealDate;
+    }
+
     public LocalDateTime getBookReturnRealDate(){
         return bookReturnRealDate;
     }
@@ -55,7 +59,8 @@ public class Loan {
     @Override
     public String toString() {
         return "Loan{" +
-                "user=" + user.getName() +
+                "LoanID=" + id +
+                ", user=" + user.getName() +
                 ", book=" + bookCopy.getBook().getTitle() +
                 ", status=" + status +
                 ", returnPreviewDate=" + bookReturnPreviewDate +

@@ -16,7 +16,7 @@ public class InMemoryBookCopyRepository implements BookCopyRepository {
     public BookCopy save(BookCopy bookCopy){
         bookCopies.put(bookCopy.getId(), bookCopy);
         return bookCopy;
-    };
+    }
 
     @Override
     public List<BookCopy> findAll(){
