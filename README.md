@@ -26,9 +26,18 @@ Throughout the development process, this project will serve as a foundation for 
 - [x] Empréstimo.
 - [x] Devolução.
 - [x] Cálculo de atraso.
-- [ ] Histórico do usuário.
+- [x] Histórico do usuário.
 - [ ] Filtros por disponibilidade.
-- [ ] Exceções de negócio.
+- [ ] Business Exception
+
+
+### FIRST MONTH DELIVERY
+- [ ] Register books and users.
+- [ ] borrow and return bookcopies.
+- [ ] Prevent Invalid Actions.
+- [ ] Query Historic.
+- [ ] Automated Tests.
+- [ ] Terminal Execution.
 
 ---
 

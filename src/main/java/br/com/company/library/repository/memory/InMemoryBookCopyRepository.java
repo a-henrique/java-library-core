@@ -1,6 +1,7 @@
 package br.com.company.library.repository.memory;
 
 import br.com.company.library.domain.BookCopy;
+import br.com.company.library.domain.BookCopyStatus;
 import br.com.company.library.repository.BookCopyRepository;
 
 import java.util.HashMap;
@@ -26,5 +27,12 @@ public class InMemoryBookCopyRepository implements BookCopyRepository {
     @Override
     public Optional<BookCopy> findById(Long id){
         return Optional.ofNullable(bookCopies.get(id));
+    }
+
+    public List<BookCopy> findByStatus(BookCopyStatus status){
+        return bookCopies.values()
+                .stream()
+                .filter(copy -> copy.getStatus() == status)
+                .toList();
     }
 }
